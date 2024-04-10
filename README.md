@@ -31,7 +31,8 @@
 | $RT_{jo}$                 | The setup time taken for $O_{jo}$               |
 
 ### The final MILP model with its constraints can be summarized as follows:
-**Minimize:**
+### We want to minimize the total tardiness 
+
 $$
 \sum_{j \in J} T_j
 $$
