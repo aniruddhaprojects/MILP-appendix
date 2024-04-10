@@ -46,3 +46,11 @@ $$
 $$
 T_j \geq C_j - D_j \quad \text{(2)}
 $$
+
+$$
+C_j \geq s_{jo} + PT_{jo} \quad \forall o \in H_j \quad \text{(3)}
+$$
+
+$$
+s_{jo} \geq s_{j^{'}o^{'}} + RT_{jo} + (y_{j^{'}o^{'}jo}^m - 1) \cdot G \quad \forall m \in M, \quad j, j^{'} \in J, \quad o \in H_j, \quad o^{'} \in H_{j^{'}}, \quad (j, o) \neq (j^{'}, o^{'}) \quad \text{(4)}
+$$
