@@ -80,7 +80,7 @@ $$
 $$
 
 $$
-\sum_{j^{'} \in J} \sum_{o^{'} \in H_{j^{'}}} y_{j^{'}o^{'}jo}^m + \bar{y}}{\'}jo}^m = \sum_{k \in (k_{jo} \cap K)} z_{jo}^{mk} \quad \forall m \in M, \quad j \in J, \quad o \in H_j \quad \text{(11)}
+\sum_{j^{'} \in J} \sum_{o^{'} \in H_{j^{'}}} y_{j^{'}o^{'}jo}^m + \bar{y}}{\'}{jo}^m = \sum_{k \in (k_{jo} \cap K)} z_{jo}^{mk} \quad \forall m \in M, \quad j \in J, \quad o \in H_j \quad \text{(11)}
 $$
 
 $$
