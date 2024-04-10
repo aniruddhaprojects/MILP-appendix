@@ -31,7 +31,7 @@
 | $RT_{jo}$                 | The setup time taken for $O_{jo}$               |
 
 The final MILP model with its constraints can be summarized as follows:
-
+**Minimize:**
 $$
 \sum_{j \in J} T_j
 $$
