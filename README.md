@@ -94,3 +94,7 @@ $$
 $$
 \sum_{j \in J} \sum_{o \in H_j} \bar{y}_{jo}^m \leq 1 \quad \forall m \in M \quad \text{(14)}
 $$
+
+$$
+\sum_{j \in J} \sum_{o \in H_j} \hat{y}_{jo}^m \leq 1 \quad \forall m \in M \quad \text{(15)}
+$$
