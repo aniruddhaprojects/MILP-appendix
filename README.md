@@ -74,3 +74,24 @@ $$
 $$
 PT_{jo} \geq p_{jo}^{mk} + (z_{jo}^{mk} - 1) \cdot G \quad \forall j \in J, \quad o \in H_j, \quad k \in (k_{jo} \cap K) \quad \text{(9)}
 $$
+
+$$
+\sum_{m \in M} \sum_{k \in (k_{jo} \cap K)} z_{jo}^{mk} = 1 \quad \forall j \in J, \quad o \in H_j \quad \text{(10)}
+$$
+
+$$
+\sum_{j^{'} \in J} \sum_{o^{'} \in H_{j^{'}}} y_{j^{'}o^{'}jo}^m + \bar{y}_{jo}^m = \sum_{k \in (k_{jo} \cap K)} z_{jo}^{mk} \quad \forall m \in M, \quad j \in J, \quad o \in H_j \quad \text{(11)}
+$$
+
+$$
+\sum_{j^{'} \in J} \sum_{o^{'} \in H_{j^{'}}} y_{j^{'}o^{'}jo}^m + \hat{y}_{jo}^m = \sum_{k \in (k_{jo} \cap K)} z_{jo}^{mk} \quad \forall m \in M, \quad j \in J, \quad o \in H_j \quad \text{(12)}
+$$
+
+
+$$
+G \cdot \sum_{j \in J} \sum_{o \in H_j} \hat{y}_{jo}^{m} \geq \sum_{j \in J} \sum_{o \in H_j} \sum_{k \in (k_{jo} \cap K)} z_{jo}^{mk} \quad \forall m \in M \quad \text{(13)}
+$$
+
+$$
+\sum_{j \in J} \sum_{o \in H_j} \bar{y}_{jo}^m \leq 1 \quad \forall m \in M \quad \text{(14)}
+$$
