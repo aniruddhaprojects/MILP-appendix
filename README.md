@@ -54,3 +54,23 @@ $$
 $$
 s_{jo} \geq s_{j^{'}o^{'}} + RT_{jo} + (y_{j^{'}o^{'}jo}^m - 1) \cdot G \quad \forall m \in M, \quad j, j^{'} \in J, \quad o \in H_j, \quad o^{'} \in H_{j^{'}}, \quad (j, o) \neq (j^{'}, o^{'}) \quad \text{(4)}
 $$
+
+$$
+s_{jo^{'}} \geq s_{jo} + PT_{jo} \quad j \in J, \quad o, o^{'} \in H_j, \quad O_{jo} \in E_{jo^{'}} \quad \text{(5)}
+$$
+
+$$
+s_{jo} \geq AT_j \quad \text{(6)}
+$$
+
+$$
+RT_{jo} \geq rt_m^{k^{'}k} \cdot y_{j^{'}o^{'}jo}^m + (z_{jo}^{mk} + z_{j^{'}o^{'}}^{mk^{'}} - 2) \cdot G \quad \forall m \in M, \quad o \in H_j, \quad o^{'} \in H_{j^{'}}, \quad j \in J, \quad j^{'} \in J, \quad k \in (k_{jo} \cap K), \quad k^{'} \in (k_{j^{'}, o^{'}} \cap K), \quad (j, o) \neq (j^{'}, o^{'}) \quad \text{(7)}
+$$
+
+$$
+RT_{jo} \geq rt_m^{ok} \cdot \bar{y}_{jo}^m \quad \forall m \in M, \quad j \in J, \quad o \in H_j \quad \text{(8)}
+$$
+
+$$
+PT_{jo} \geq p_{jo}^{mk} + (z_{jo}^{mk} - 1) \cdot G \quad \forall j \in J, \quad o \in H_j, \quad k \in (k_{jo} \cap K) \quad \text{(9)}
+$$
