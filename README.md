@@ -42,3 +42,7 @@ $$
 $$
 T_j \geq 0 \quad \text{(1)}
 $$
+
+$$
+T_j \geq C_j - D_j \quad \text{(2)}
+$$
