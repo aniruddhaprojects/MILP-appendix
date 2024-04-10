@@ -30,7 +30,8 @@
 | $PT_{jo}$                 | Processing time of $O_{jo}$                     |
 | $RT_{jo}$                 | The setup time taken for $O_{jo}$               |
 
-The final MILP model with its constraints can be summarized as follows:
+###The final MILP model with its constraints can be summarized as follows:
+
 $$
 \sum_{i=1}^{n} i = \frac{{n(n+1)}}{2}
 $$
