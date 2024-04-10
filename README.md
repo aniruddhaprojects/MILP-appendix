@@ -84,11 +84,11 @@ $$
 $$
 
 $$
-\sum_{j^{'} \in J} \sum_{o^{'} \in H_{j^{'}}} y_{j^{'}o^{'}jo}^m + \hat{y}_{jo}^m = \sum_{k \in (k_{jo} \cap K)} z_{jo}^{mk} \quad \forall m \in M, \quad j \in J, \quad o \in H_j \quad \text{(12)}
+\sum_{j^{'} \in J} \sum_{o^{'} \in H_{j^{'}}} y_{j^{'}o^{'}jo}^m + \hat{y}{\'}{jo}^m = \sum_{k \in (k_{jo} \cap K)} z_{jo}^{mk} \quad \forall m \in M, \quad j \in J, \quad o \in H_j \quad \text{(12)}
 $$
 
 $$
-G \cdot \sum_{j \in J} \sum_{o \in H_j} \hat{y}_{jo}^{m} \geq \sum_{j \in J} \sum_{o \in H_j} \sum_{k \in (k_{jo} \cap K)} z_{jo}^{mk} \quad \forall m \in M \quad \text{(13)}
+G \cdot \sum_{j \in J} \sum_{o \in H_j} \hat{y}{\'}{jo}^{m} \geq \sum_{j \in J} \sum_{o \in H_j} \sum_{k \in (k_{jo} \cap K)} z_{jo}^{mk} \quad \forall m \in M \quad \text{(13)}
 $$
 
 $$
@@ -112,5 +112,5 @@ $$
 $$
 
 $$
-\{z_{jo}^{mk}, y_{j^{'}o^{'}jo}^{m}, \bar{y}_{jo}^{m}, \hat{y}_{jo}^{m}\} \in \{0, 1\} \quad \text{(19)}
+\{z_{jo}^{mk}, y_{j^{'}o^{'}jo}^{m}, \bar{y}{\'}{jo}^{m}, \hat{y}_{jo}^{m}\} \in \{0, 1\} \quad \text{(19)}
 $$
