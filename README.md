@@ -34,35 +34,51 @@ The final MILP model with its constraints can be summarized as follows:
 
 $$\mathbf{minimize} \hspace{1em} \sum_{j\in J} T_j \label{obj}$$
 
-subject to:
+$$\begin{aligned}
+\vspace{10pt}
+\mathbf{subject\hspace{1mm}to:}
+& \hspace{0.5em} T_j \geq 0   \label{con_1}\\
+        & \hspace{0.5em} T_j \geq C_j - D_j   \label{con_2}\\
+        & \hspace{0.5em} C_j \geq s_{jo} + PT_{jo} \hspace{1em} \forall o \in H_j \label{con_3}\\
+        \begin{split}
+            & \hspace{0.4em} s_{jo} \geq s_{j^{'}o^{'}} + RT_{jo} + (y_{j^{'}o^{'}jo}^m - 1) * G \hspace{1em} \forall m \in M, \\
+            & \hspace{1em} j, j^{'} \in J, o \in H_j, o^{'} \in H_{j^{'}}, (j, o) \neq (j^{'}, o^{'})
+        \end{split} \label{con_4}\\
+        & \hspace{0.5em} s_{jo^{'}} \geq s_{jo} + PT_{jo} \hspace{0.5em} j \in J, o, o^{'} \in H_j, O_{jo} \in E_{jo^{'}} \label{con_5}\\
+        & \hspace{0.5em} s_{jo} \geq AT_j \label{con_6}\\
+        \begin{split}
+            & \hspace{0.5em} RT_{jo} \geq rt_m^{k^{'}k} * y_{j^{'}o^{'}jo}^m + (z_{jo}^{mk} + z_{j^{'}o^{'}}^{mk^{'}} - 2) * G \\
+            & \hspace{1em} \forall m \in M, o \in H_j, o^{'} \in H_{j^{'}}, j \in J, j^{'} \in J, \\
+            & \hspace{1em} k \in (k_{jo} \cap K), k^{'} \in (k_{j^{'}o^{'}} \cap K), (j, o) \neq (j^{'}, o^{'})
+        \end{split} \label{con_7}\\
+        & \hspace{1em} RT_{jo} \geq rt_m^{ok} * \bar{y}_{jo}^{m} \hspace{0.5em} \forall m \in M, j \in J, o \in H_j \label{con_8}\\
+        \begin{split}
+            & \hspace{0.5em} PT_{jo} \geq p_{jo}^{mk} + (z_{jo}^{mk} - 1) * G \hspace{1em} \\ 
+            & \hspace{1em} \forall j \in J, o \in H_j, k \in (k_jo \cap K) \\
+        \end{split} \label{con_9}\\
+        & \hspace{1em} \sum_{m \in M} \sum_{k \in (k_{jo} \cap K)} z_{jo}^{mk} = 1 \hspace{1em} \forall j \in J, o \in H_j \label{con_10}\\
+        \begin{split}
+            & \hspace{0.5em} \sum_{j^{'} \in J} \sum_{o^{'} \in H_{j^{'}}} y_{j^{'}o^{'}jo}^m + {\bar{y}}_{jo}^m = \sum_{k \in (k_{jo} \cap K)} z_{jo}^{mk} \\
+            & \hspace{1em} \forall m \in M, j \in J, o \in H_j
+        \end{split}   \label{con_11}\\
+        \begin{split}
+            & \hspace{0.5em} \sum_{j^{'} \in J} \sum_{o^{'} \in H_{j^{'}}} y_{j^{'}o^{'}jo}^m + \hat{y}_{jo}^m = \sum_{k \in (k_{jo} \cap K)} z_{jo}^{mk} \\
+            & \hspace{1em} \forall m \in M, j \in J, o \in H_j 
+        \end{split} \label{con_12}\\
+        & \hspace{0.5em} G * \sum_{j \in J} \sum_{o \in H_j} \hat{y}_{jo}^{m} \geq \sum_{j \in J} \sum_{o \in H_j} \sum_{k \in (k_{jo} \cap K)} z_{jo}^{mk} \hspace{0.5em} \forall m \in M \label{con_13}\\
+        & \hspace{0.5em} \sum_{j \in J} \sum_{o \in H_j} \bar{y}_{jo}^m \leq 1 \hspace{1em} \forall m \in M \label{con_14}\\
+        & \hspace{0.5em} \sum_{j \in J} \sum_{o \in H_j} \hat{y}_{jo}^m \leq 1 \hspace{1em} \forall m \in M \label{con_15}\\
+        \begin{split}
+            & \hspace{0.5em} G * (2 - \bar{y}_{jo}^m - \hat{y}_{jo}^m) \geq \sum_{k \in (k_{jo} \cap K)} z_{jo}^{mk} - 1 \hspace{1em} \\
+            & \hspace{1em} \forall j \in J, o \in H_j, m \in M
+        \end{split} \label{con_16}\\
+        \begin{split}
+            & \hspace{0.5em} \sum_{j^{'} \in J} \sum_{o^{'} \in H_{j^{'}}} y_{j^{'}o^{'}jo}^m = \sum_{k \in (k_{jo} \cap K)} z_{jo}^{mk} - 1 \\
+            & \hspace{1em} \forall j \in J, o \in H_j, m \in M
+        \end{split} \label{con_17}\\
+        & \hspace{0.5em} \{s_{jo}, T_{j}, C_{j}, PT_{jo}, RT_{jo}\} \in R^{+} \label{con_18}\\
+        & \hspace{0.5em} \{z_{jo}^{mk}, y_{j^{'}o^{'}jo}^{m}, \bar{y}_{jo}^{m}, \hat{y}_{jo}^{m}\} \in \{0, 1\} \label{con_19}
+\end{aligned}$$
 
-- T_j ≥ 0   (con_1)
-- T_j ≥ C_j - D_j   (con_2)
-- C_j ≥ s_{jo} + PT_{jo}   ∀o ∈ H_j  (con_3)
-- s_{jo} ≥ s_{j^{'o^{'}}} + RT_{jo} + (y_{j^{'}o^{'}jo}^m - 1) * G  
-  ∀m ∈ M, j, j^{'} ∈ J, o ∈ H_j, o^{'} ∈ H_{j^{'}}, (j, o) ≠ (j^{'}, o^{'}) (con_4)
-- s_{jo^{'}} ≥ s_{jo} + PT_{jo}  
-  j ∈ J, o, o^{'} ∈ H_j, O_{jo} ∈ E_{jo^{'}} (con_5)
-- s_{jo} ≥ AT_j   (con_6)
-- RT_{jo} ≥ rt_m^{k^{'k}} * y_{j^{'}o^{'}jo}^m + (z_{jo}^{mk} + z_{j^{'}o^{'}}^{mk^{'}} - 2) * G 
-  ∀m ∈ M, o ∈ H_j, o^{'} ∈ H_{j^{'}}, j ∈ J, j^{'} ∈ J, 
-  k ∈ (k_{jo} ∩ K), k^{'} ∈ (k_{j^{'}, o^{'}} ∩ K), (j, o) ≠ (j^{'}, o^{'}) (con_7)
-- RT_{jo} ≥ rt_m^{ok} * \bar{y}_{jo}^m   ∀m ∈ M, j ∈ J, o ∈ H_j (con_8)
-- PT_{jo} ≥ p_{jo}^{mk} + (z_{jo}^{mk} - 1) * G   
-  ∀j ∈ J, o ∈ H_j, k ∈ (k_{jo} ∩ K) (con_9)
-- ∑_{m ∈ M} ∑_{k ∈ (k_{jo} ∩ K)} z_{jo}^{mk} = 1   
-  ∀j ∈ J, o ∈ H_j (con_10)
-- ∑_{j^{'} ∈ J} ∑_{o^{'} ∈ H_{j^{'}}} y_{j^{'}o^{'}jo}^m + \bar{y}_{jo}^m = ∑_{k ∈ (k_{jo} ∩ K)} z_{jo}^{mk} 
-  ∀m ∈ M, j ∈ J, o ∈ H_j (con_11)
-- ∑_{j^{'} ∈ J} ∑_{o^{'} ∈ H_{j^{'}}} y_{j^{'}o^{'}jo}^m + \hat{y}_{jo}^m = ∑_{k ∈ (k_{jo} ∩ K)} z_{jo}^{mk} 
-  ∀m ∈ M, j ∈ J, o ∈ H_j (con_12)
-- G * ∑_{j ∈ J} ∑_{o ∈ H_j} \hat{y}_{jo}^{m} ≥ ∑_{j ∈ J} ∑_{o ∈ H_j} ∑_{k ∈ (k_{jo} ∩ K)} z_{jo}^{mk}   
-  ∀m ∈ M (con_13)
-- ∑_{j ∈ J} ∑_{o ∈ H_j} \bar{y}_{jo}^m ≤ 1   ∀m ∈ M (con_14)
-- ∑_{j ∈ J} ∑_{o ∈ H_j} \hat{y}_{jo}^m ≤ 1   ∀m ∈ M (con_15)
-- G * (2 - \bar{y}_{jo}^m - \hat{y}_{jo}^m) ≥ ∑_{k ∈ (k_{jo} ∩ K)} z_{jo}^{mk} - 1   
-  ∀j ∈ J, o ∈ H_j, m ∈ M (con_16)
-- ∑_{j^{'} ∈ J} ∑_{o^{'} ∈ H_{j^{'}}} y_{j^{'}o^{'}jo}^m = ∑_{k ∈ (k_{jo} ∩ K)} z_{jo}^{mk} - 1   
-  ∀j ∈ J, o ∈ H_j, m ∈ M (con_17)
-- \{s_{jo}, T_{j}, C_{j}, PT_{jo}, RT_{jo}\} ∈ R^{+}   (con_18)
-- \{z_{jo}^{mk}, y_{j^{'}o^{'}jo}^{m}, \bar{y}_{jo}^{m}, \hat{y}_{jo}^{m}\} ∈ \{0, 1\}   (con_19)
+We aim to minimize the tardiness objective denoted in equation while
+being subjected to all the constraints listed above.
