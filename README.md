@@ -36,3 +36,8 @@
 $$
 \sum_{j \in J} T_j
 $$
+This minimization is constrained by:
+
+$$
+T_j \geq 0 \quad \text{(1)}
+$$
