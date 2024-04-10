@@ -106,3 +106,11 @@ $$
 $$
 \sum_{j^{'} \in J} \sum_{o^{'} \in H_{j^{'}}} y_{j^{'}o^{'}jo}^m = \sum_{k \in (k_{jo} \cap K)} z_{jo}^{mk} - 1 \quad \forall j \in J, \quad o \in H_j, \quad m \in M \quad \text{(17)}
 $$
+
+$$
+\{s_{jo}, T_{j}, C_{j}, PT_{jo}, RT_{jo}\} \in \mathbb{R}^{+} \quad \text{(18)}
+$$
+
+$$
+\{z_{jo}^{mk}, y_{j^{'}o^{'}jo}^{m}, \bar{y}_{jo}^{m}, \hat{y}_{jo}^{m}\} \in \{0, 1\} \quad \text{(19)}
+$$
