@@ -32,7 +32,7 @@
 
 The final MILP model with its constraints can be summarized as follows:
 
-minimize   ∑_{j∈J} T_j  (obj)
+[![\\ \mathbf{minimize} \hspace{1em} \sum_{j\in J} T_j \label{obj} \\ ]
 
 subject to:
 
