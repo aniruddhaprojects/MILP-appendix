@@ -31,7 +31,9 @@
 | $RT_{jo}$                 | The setup time taken for $O_{jo}$               |
 
 The final MILP model with its constraints can be summarized as follows:
-$\\begin{aligned}
+The final MILP model with its constraints can be summarized as follows:
+**m****i****n****i****m****i****z****e**  ∑<sub>*j* ∈ *J*</sub>*T*<sub>*j*</sub>
+$$\\begin{aligned}
 \\vspace{10pt}
 \\mathbf{subject\\hspace{1mm}to:}
 & \\hspace{0.5em} T_j \\geq 0   \\label{con_1}\\\\
