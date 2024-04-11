@@ -1,0 +1,19 @@
+cff-version: 0.0.1
+message: "If you use this in your work, please cite it as below."
+
+authors:
+- family-names: "Datta"
+  given-names: "Aniruddha"
+- family-names: "Yaganti"
+  given-names: "Bhanu Vikas"
+- family-names: "Dove"
+  given-names: "Andrew"
+- family-names: "Peltz"
+  given-names: "Arik"
+- family-names: "Chakrabarty"
+  given-names: "Krishnendu"
+  
+title: "Appendix"
+version: 0.0.1
+
+url: "https://github.com/aniruddhaprojects/MILP-appendix.git"
